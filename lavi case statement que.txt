@@ -1,0 +1,34 @@
+select mov_title,mov_lang,mov_year,mov_dt_rel, mov_time,mov_rel_country,
+
+case when mov_rel_country='UK' and mov_time<100 then 'SHORT MOVIE'
+when  mov_rel_country='UK' and 100>mov_time<150 then 'AVERAGE LENGTH'
+when  mov_rel_country='UK' and 151>mov_time<200 then 'LONG'
+else 'EXTRA LONG' end as MOVIE DESC
+
+ from movie
+
+
+
+
+
+
+SELECT EmployeeID,FirstName, BirthDate, substring(BirthDate,1,4),
+case when 1950>substring(BirthDate,1,4)<1970 then 'SNR CITIZEN'
+when 1970>substring(BirthDate,1,4)<2000 then 'MIDDLE AGE'
+when 2000>substring(BirthDate,1,4)<2010 then 'YOUNG AGE'
+when substring(BirthDate,1,4)>2010 then  'BABY'
+else 'INVALID DOB' end as category 
+
+FROM Employees;
+
+
+
+
+SELECT *, 
+case when Quantity<10 then 'Less Order'
+     when  Quantity<30 then 'Little Order'
+     when  Quantity<50 then 'High Order'
+     when Quantity<70 then 'highest Order'
+     else 'No Order'
+     end as Total_order
+     FROM OrderDetails;

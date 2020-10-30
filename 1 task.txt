@@ -1,0 +1,13 @@
+create table insmed_codelist as 
+(
+Codelist text(50),
+Codelist Name (100),
+Original Value text(100),
+Standard Value text(100),
+Customer text(100),
+ACTIVE_FL text(10),
+Created Date date,
+Modified Date date,
+Comments text(100)
+);
+ 
